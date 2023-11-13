@@ -31,8 +31,7 @@ public:
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
             // Устанавливаем User-Agent
-            // Вместо "User-Agent" вставляем свои данные
-            curl_easy_setopt(curl, CURLOPT_USERAGENT, "User-Agent");
+            curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
 
             // Устанавливаем обработчик для записи данных
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
@@ -112,7 +111,7 @@ private:
                 std::string priceContent = reinterpret_cast<const char*>(xmlNodeGetContent(priceNode));
                 std::string linkContent = reinterpret_cast<const char*>(xmlNodeGetContent(linkNode));
 
-                outputFile << "Title: " << titleContent << ", Author: " << authorContent << ", Price: " << priceContent << ", Link: " << linkContent << std::endl;
+                outputFile << "Title:" << titleContent << "Author:" << authorContent << "Price:" << priceContent << "Link:" << linkContent << "\n\n";
             }
 
             outputFile.close();
