@@ -31,7 +31,8 @@ public:
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
             // Устанавливаем User-Agent
-            curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
+            // Вместо "User-Agent" вставляем свой
+            curl_easy_setopt(curl, CURLOPT_USERAGENT, "User-Agent");
 
             // Устанавливаем обработчик для записи данных
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
