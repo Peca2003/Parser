@@ -78,7 +78,7 @@ private:
             if (xpathCtx)
             {
                 // Выполняем XPath запросы
-                xpathQueryAndSave(xpathCtx, "//div[@class='product-title__head']", "//div[@class='product-title__author']", "//div[@class='product-price__value product-price__value--discount']", "//a[@class='product-card__picture product-card__row']");
+                xpathQueryAndSave(xpathCtx, "//div[@class='product-title__head']", "//div[@class='product-title__author']", "//div[@class='product-price__value product-price__value--discount']", "//a[@class='product-card__title']");
 
                 // Освобождаем контекст XPath
                 xmlXPathFreeContext(xpathCtx);
